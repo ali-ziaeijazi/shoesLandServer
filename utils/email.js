@@ -3,11 +3,13 @@ require('dotenv').config();  // بارگذاری متغیرهای محیطی ا�
 
 // تنظیمات انتقال ایمیل با استفاده از Gmail
 const transporter = nodemailer.createTransport({
-  service: 'gmail',  // استفاده از سرویس Gmail
+  service: 'Gmail',  // استفاده از سرویس Gmail
   auth: {
     user: process.env.EMAIL_USER,  // ایمیل از متغیر محیطی
     pass: process.env.EMAIL_PASS,  // رمز عبور اپلیکیشن از متغیر محیطی
   },
+  secure:true,
+  port:587
 });
 
 // تابع ارسال ایمیل

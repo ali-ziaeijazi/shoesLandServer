@@ -1,13 +1,69 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1735195776832,
+      "username": "aliziaeijazi1",
+      "email": "aliziaeijazi1@gmail.com",
+      "password": "$2a$10$B7N2gIfegfMoUMYsS91yy.HWfLX2k2/Jd9BjuMBK4M6opqAMmN4C.",
+      "firstName": "ali",
+      "lastName": "ziaei",
+      "phone": "09123456789"
+    },
+    {
+      "id": 1735195801508,
+      "username": "aliziaeijazi",
+      "email": "aliziaeijazi@gmail.com",
+      "password": "$2a$10$GwmMN6/SNBKlAddXBuIpMu.1mhh7PEV8X74sGRafipEWOT3mvVog6",
+      "firstName": "ali",
+      "lastName": "ziaei",
+      "phone": "09123456789"
+    },
+    {
+      "id": 1735219242438,
+      "username": "alizia",
+      "email": "alizia1379@gmail.com",
+      "password": "$2a$10$rnoQrRqCiroK3y5B/qzpVOsbX5l60UM0ahMhAHkVPYvKed5Qe5QSK",
+      "firstName": "ali",
+      "lastName": "ziaei",
+      "phone": "09123456789"
+    }
+  ],
   "brands": [
-    { "id": 1, "name": "adidas", "icon": "" },
-    { "id": 2, "name": "asics", "icon": "" },
-    { "id": 3, "name": "converse", "icon": "" },
-    { "id": 4, "name": "newbalance", "icon": "" },
-    { "id": 4, "name": "nike", "icon": "" },
-    { "id": 6, "name": "puma", "icon": "" },
-    { "id": 7, "name": "reebok", "icon": "" }
+    {
+      "id": 1,
+      "name": "adidas",
+      "icon": "http://localhost:8000/brands/adidas.png"
+    },
+    {
+      "id": 2,
+      "name": "asics",
+      "icon": "http://localhost:8000/brands/asics.png"
+    },
+    {
+      "id": 3,
+      "name": "converse",
+      "icon": "http://localhost:8000/brands/converse.png"
+    },
+    {
+      "id": 4,
+      "name": "newbalance",
+      "icon": "http://localhost:8000/brands/newbalance.png"
+    },
+    {
+      "id": 4,
+      "name": "nike",
+      "icon": "http://localhost:8000/brands/nike.png"
+    },
+    {
+      "id": 6,
+      "name": "puma",
+      "icon": "http://localhost:8000/brands/puma.png"
+    },
+    {
+      "id": 7,
+      "name": "reebok",
+      "icon": "http://localhost:8000/brands/reebok.png"
+    }
   ],
   "products": [
     {
@@ -20,13 +76,26 @@
       "description": "These shoes are designed for everyday wear, offering a perfect balance of comfort and style. The cushioned insole ensures your feet stay comfortable all day, while the sleek design complements any casual outfit.With a variety of colors to choose from, these shoes are perfect for those who want to add a touch of personality to their wardrobe. The modern design and comfortable fit make them an excellent choice for daily wear.",
       "is_popular": true,
       "order": 0,
-      "sizes": [42, 41, 40],
-      "colors": ["rose", "emerald", "yellow", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        42,
+        41,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "yellow",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/adidas/1.webp",
-        "http://localhost:8000/products/adidas/1.webp",
-        "http://localhost:8000/products/adidas/1.webp"
+        "http://localhost:8000/products/adidas/1.1.webp",
+        "http://localhost:8000/products/adidas/1.2.webp"
       ]
     },
     {
@@ -39,13 +108,27 @@
       "description": "Built for performance, these shoes provide excellent support and stability, making them ideal for sports and outdoor activities. Whether you're running, playing basketball, or hiking, they offer the durability and comfort you need.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/adidas/2.webp",
-        "http://localhost:8000/products/adidas/2.webp",
-        "http://localhost:8000/products/adidas/2.webp"
+        "http://localhost:8000/products/adidas/2.1.webp",
+        "http://localhost:8000/products/adidas/2.2.webp",
+        "http://localhost:8000/products/adidas/2.3.webp"
       ]
     },
     {
@@ -58,13 +141,26 @@
       "description": "Made from high-quality materials, these shoes are designed to last. The durable soles and breathable uppers ensure that your feet stay comfortable and supported throughout the day, even during extended wear.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 43, 40],
-      "colors": ["red", "emerald", "teal", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        44,
+        43,
+        40
+      ],
+      "colors": [
+        "red",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/adidas/3.webp",
-        "http://localhost:8000/products/adidas/3.webp",
-        "http://localhost:8000/products/adidas/3.webp"
+        "http://localhost:8000/products/adidas/3.1.webp",
+        "http://localhost:8000/products/adidas/3.2.webp"
       ]
     },
     {
@@ -77,13 +173,26 @@
       "description": "Combining comfort with style, these shoes are perfect for those who want to look good without sacrificing comfort. The cushioned footbed and lightweight design make them suitable for all-day wear.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 39],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        39
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/adidas/4.webp",
-        "http://localhost:8000/products/adidas/4.webp",
-        "http://localhost:8000/products/adidas/4.webp"
+        "http://localhost:8000/products/adidas/4.1.webp",
+        "http://localhost:8000/products/adidas/4.2.webp"
       ]
     },
     {
@@ -96,13 +205,27 @@
       "description": "These shoes are perfect for long walks, offering exceptional arch support and cushioning. Whether you're strolling through the park or running errands, they will keep your feet comfortable and pain-free.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/adidas/5.webp",
-        "http://localhost:8000/products/adidas/5.webp",
-        "http://localhost:8000/products/adidas/5.webp"
+        "http://localhost:8000/products/adidas/5.1.webp",
+        "http://localhost:8000/products/adidas/5.2.webp",
+        "http://localhost:8000/products/adidas/5.3.webp"
       ]
     },
     {
@@ -115,12 +238,25 @@
       "description": "Featuring anti-slip technology, these shoes provide extra grip on slippery surfaces, making them ideal for rainy days or outdoor activities where stability is key.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
-        "http://localhost:8000/products/adidas/6.webp",
-        "http://localhost:8000/products/adidas/6.webp",
+        "http://localhost:8000/products/adidas/6.1.webp",
+        "http://localhost:8000/products/adidas/6.2.webp",
         "http://localhost:8000/products/adidas/6.webp"
       ]
     },
@@ -134,13 +270,26 @@
       "description": "Designed with a professional and polished look, these shoes are perfect for the office or formal events. The sleek design pairs well with suits or business casual attire, ensuring you always look your best.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/adidas/7.webp",
-        "http://localhost:8000/products/adidas/7.webp",
-        "http://localhost:8000/products/adidas/7.webp"
+        "http://localhost:8000/products/adidas/7.1.webp",
+        "http://localhost:8000/products/adidas/7.2.webp"
       ]
     },
     {
@@ -153,13 +302,26 @@
       "description": "These shoes are ergonomically designed to support your feet throughout the day. The arch support and cushioned insoles reduce fatigue, making them perfect for long hours of standing or walking.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 1, "name": "adidas", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 1,
+        "name": "adidas",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/adidas/8.webp",
-        "http://localhost:8000/products/adidas/8.webp",
-        "http://localhost:8000/products/adidas/8.webp"
+        "http://localhost:8000/products/adidas/8.1.webp",
+        "http://localhost:8000/products/adidas/8.2.webp"
       ]
     },
     {
@@ -172,9 +334,22 @@
       "description": "Lightweight and easy to pack, these shoes are ideal for travel. Whether you're exploring a new city or heading out for a casual day trip, your feet will stay comfortable all day long.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/1.webp",
         "http://localhost:8000/products/asics/1.webp",
@@ -191,9 +366,22 @@
       "description": "Waterproof and durable, these shoes are designed to keep your feet dry during wet weather. Whether you're caught in the rain or walking through puddles, they offer reliable protection against the elements.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/2.webp",
         "http://localhost:8000/products/asics/2.webp",
@@ -210,9 +398,22 @@
       "description": "With a classic design that never goes out of style, these shoes are versatile enough to be worn on any occasion. Whether you're heading to a casual gathering or a more formal event, they provide a timeless look.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/3.webp",
         "http://localhost:8000/products/asics/3.webp",
@@ -229,9 +430,22 @@
       "description": "Perfect for intense workouts, these shoes provide the necessary support and cushioning for a range of athletic activities. From running to weightlifting, they will help you perform at your best.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/4.webp",
         "http://localhost:8000/products/asics/4.webp",
@@ -248,9 +462,22 @@
       "description": "These shoes are designed to keep your feet comfortable all day long. With a memory foam insole and breathable material, they ensure a cushioned fit that adapts to your foot's natural shape.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/5.webp",
         "http://localhost:8000/products/asics/5.webp",
@@ -267,9 +494,22 @@
       "description": "Ideal for outdoor enthusiasts, these shoes are built to withstand rugged terrain. Whether you're hiking, trekking, or exploring nature, they provide excellent grip and durability.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/6.webp",
         "http://localhost:8000/products/asics/6.webp",
@@ -286,9 +526,22 @@
       "description": "These shoes feature a modern and stylish design, making them a great addition to any wardrobe. Whether you're dressing up or down, they add a fashionable touch to any outfit.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/7.webp",
         "http://localhost:8000/products/asics/7.webp",
@@ -305,9 +558,22 @@
       "description": "Breathable and lightweight, these shoes are perfect for the summer months. The mesh upper allows for maximum airflow, keeping your feet cool and comfortable even on the hottest days.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 2, "name": "asics", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 2,
+        "name": "asics",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/asics/8.webp",
         "http://localhost:8000/products/asics/8.webp",
@@ -324,9 +590,22 @@
       "description": "Built to keep your feet warm in cold weather, these shoes feature thermal insulation and water-resistant materials, making them ideal for winter activities or chilly temperatures.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/1.jpg",
         "http://localhost:8000/products/converse/1.jpg",
@@ -343,9 +622,22 @@
       "description": "With a minimalist design, these shoes are perfect for those who prefer simplicity. Their sleek lines and neutral colors make them easy to pair with any outfit, from casual to semi-formal.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/2.jpg",
         "http://localhost:8000/products/converse/2.jpg",
@@ -362,9 +654,22 @@
       "description": "Padded protection around the collar and insole ensures that these shoes offer extra comfort and support. They are perfect for long hours of wear, whether you're at work or running errands.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/3.jpg",
         "http://localhost:8000/products/converse/3.jpg",
@@ -381,9 +686,22 @@
       "description": "These shoes are designed for driving, with a soft and flexible sole that provides excellent grip on the pedals. They are perfect for long road trips or short commutes.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/4.jpg",
         "http://localhost:8000/products/converse/4.jpg",
@@ -400,9 +718,22 @@
       "description": "Whether you're running errands or going for a walk, these shoes are perfect for an active lifestyle. They offer comfort and support for all your daily activities.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/5.jpg",
         "http://localhost:8000/products/converse/5.jpg",
@@ -419,9 +750,22 @@
       "description": "Extremely lightweight and flexible, these shoes provide a natural fit that moves with your foot. They are ideal for those who need a shoe that offers both comfort and freedom of movement.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/6.jpg",
         "http://localhost:8000/products/converse/6.jpg",
@@ -434,13 +778,26 @@
       "price": 180,
       "sold_quantity": 24454,
       "view_count": 32490,
-      "rating": 3.0,
+      "rating": 3,
       "description": "With their versatile design, these shoes easily match with any outfit. Whether you're wearing jeans, a dress, or shorts, they complement a wide range of styles.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/7.jpg",
         "http://localhost:8000/products/converse/7.jpg",
@@ -457,9 +814,22 @@
       "description": "Designed with walking in mind, these shoes offer exceptional cushioning and arch support. They are perfect for those who spend a lot of time on their feet.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 3, "name": "converse", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 3,
+        "name": "converse",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/converse/8.jpg",
         "http://localhost:8000/products/converse/8.jpg",
@@ -472,13 +842,26 @@
       "price": 165,
       "sold_quantity": 2231,
       "view_count": 18872,
-      "rating": 4.0,
+      "rating": 4,
       "description": "These shoes are perfect for those who want both comfort and style. The sleek design and cushioned footbed make them ideal for everyday wear, while the durable construction ensures they last.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 4, "name": "newbalance", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 4,
+        "name": "newbalance",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/newbalance/1.webp",
         "http://localhost:8000/products/newbalance/1.webp",
@@ -495,9 +878,22 @@
       "description": "Whether you're at the gym or running errands, these shoes offer the perfect combination of performance and comfort. They provide excellent support and cushioning for a variety of activities.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 4, "name": "newbalance", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 4,
+        "name": "newbalance",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/newbalance/2.webp",
         "http://localhost:8000/products/newbalance/2.webp",
@@ -514,9 +910,22 @@
       "description": "These shoes are perfect for those who want a comfortable and stylish option for everyday wear. The minimalist design and cushioned insoles make them suitable for long hours of wear.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 4, "name": "newbalance", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 4,
+        "name": "newbalance",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/newbalance/3.webp",
         "http://localhost:8000/products/newbalance/3.webp",
@@ -533,9 +942,22 @@
       "description": "With their neutral tones and simple design, these shoes easily match any outfit. They are perfect for those who want a versatile and stylish shoe for any occasion.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 4, "name": "newbalance", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 4,
+        "name": "newbalance",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/newbalance/4.webp",
         "http://localhost:8000/products/newbalance/4.webp",
@@ -552,9 +974,22 @@
       "description": "These shoes provide maximum comfort with their ergonomic design. The cushioned insole and arch support ensure that your feet stay comfortable throughout the day.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 4, "name": "newbalance", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 4,
+        "name": "newbalance",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/newbalance/5.webp",
         "http://localhost:8000/products/newbalance/5.webp",
@@ -571,8 +1006,17 @@
       "is_popular": true,
       "price": 164,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
       "images": [
         "http://localhost:8000/products/newbalance/6.webp",
         "http://localhost:8000/products/newbalance/6.webp",
@@ -589,9 +1033,22 @@
       "description": "These shoes combine elegance and modern flair, making them perfect for work meetings or formal events. Their sleek design ensures that you always look polished and professional.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 4, "name": "newbalance", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 4,
+        "name": "newbalance",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/newbalance/7.webp",
         "http://localhost:8000/products/newbalance/7.webp",
@@ -608,9 +1065,22 @@
       "description": "Designed with your foot's natural shape in mind, these shoes provide excellent support and comfort. They reduce foot strain and ensure that your feet stay comfortable all day.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 4, "name": "newbalance", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 4,
+        "name": "newbalance",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/newbalance/8.webp",
         "http://localhost:8000/products/newbalance/8.webp",
@@ -627,9 +1097,22 @@
       "description": "Whether you're walking around the city or running errands, these shoes are designed to keep your feet comfortable. Their lightweight construction and cushioned insoles provide all-day support.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/1.webp",
         "http://localhost:8000/products/nike/1.webp",
@@ -646,9 +1129,22 @@
       "description": "With their unique and eye-catching design, these shoes are perfect for those who want to make a statement. The bold style and comfortable fit make them a standout choice.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/2.webp",
         "http://localhost:8000/products/nike/2.webp",
@@ -665,9 +1161,22 @@
       "description": "Combining comfort and style, these shoes offer a sleek look that complements any outfit. The cushioned footbed and lightweight design ensure that your feet stay comfortable all day long.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/3.webp",
         "http://localhost:8000/products/nike/3.webp",
@@ -684,9 +1193,22 @@
       "description": "Designed with ventilation in mind, these shoes allow for maximum airflow, keeping your feet cool and dry even during intense activity or hot weather.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/4.webp",
         "http://localhost:8000/products/nike/4.webp",
@@ -703,9 +1225,22 @@
       "description": "Built to last, these shoes feature durable materials and reinforced stitching. They are perfect for those who need a reliable shoe that can withstand daily wear and tear.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/5.webp",
         "http://localhost:8000/products/nike/5.webp",
@@ -722,9 +1257,22 @@
       "description": "Whether you're walking on hard surfaces or uneven terrain, these shoes provide the support and stability you need. The durable soles ensure that you stay comfortable no matter where you go.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/6.webp",
         "http://localhost:8000/products/nike/6.webp",
@@ -737,13 +1285,26 @@
       "price": 260,
       "sold_quantity": 13149,
       "view_count": 21146,
-      "rating": 4.0,
+      "rating": 4,
       "description": "Featuring a rugged sole, these shoes provide excellent traction and support for outdoor sports. Whether you're hiking, trail running, or playing soccer, they offer the grip and durability you need.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/7.webp",
         "http://localhost:8000/products/nike/7.webp",
@@ -756,13 +1317,26 @@
       "price": 180,
       "sold_quantity": 16345,
       "view_count": 27147,
-      "rating": 2.0,
+      "rating": 2,
       "description": "These shoes combine a sporty aesthetic with comfort features, making them ideal for both athletic activities and everyday wear. The cushioned insole ensures comfort, while the design adds a modern touch.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 5, "name": "nike", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 5,
+        "name": "nike",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/nike/8.webp",
         "http://localhost:8000/products/nike/8.webp",
@@ -779,9 +1353,22 @@
       "description": "With soft and flexible soles, these shoes provide a natural feel that allows you to move freely. They are perfect for those who want a comfortable and lightweight option for daily wear.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/1.webp",
         "http://localhost:8000/products/puma/1.webp",
@@ -798,9 +1385,22 @@
       "description": "These shoes are designed for outdoor activities, offering the support and durability you need for hiking, trekking, or other adventures. The sturdy soles provide excellent traction on various surfaces.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/2.webp",
         "http://localhost:8000/products/puma/2.webp",
@@ -817,9 +1417,22 @@
       "description": "Featuring a minimalist design, these shoes are perfect for those who prefer a simple and clean look. Their neutral colors make them easy to pair with a variety of outfits.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/3.webp",
         "http://localhost:8000/products/puma/3.webp",
@@ -836,9 +1449,22 @@
       "description": "These shoes are designed to provide comfort and style, whether you're running errands or attending a formal event. Their versatile design ensures that they can be worn for any occasion.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/4.webp",
         "http://localhost:8000/products/puma/4.webp",
@@ -855,9 +1481,22 @@
       "description": "Whether you're lifting weights or doing cardio, these shoes provide the support and cushioning you need for your workout. Their flexible design ensures that your feet move naturally.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/5.webp",
         "http://localhost:8000/products/puma/5.webp",
@@ -874,9 +1513,22 @@
       "description": "Featuring advanced technology, these shoes provide superior comfort and support. With memory foam insoles and shock-absorbing soles, they reduce foot strain and keep you comfortable all day.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/6.webp",
         "http://localhost:8000/products/puma/6.webp",
@@ -893,9 +1545,22 @@
       "description": "These shoes are designed for everyday wear, offering both style and comfort. Whether you're heading to work or out with friends, they provide a versatile option for any occasion.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/7.webp",
         "http://localhost:8000/products/puma/7.webp",
@@ -912,9 +1577,22 @@
       "description": "With a flexible and durable sole, these shoes are perfect for outdoor sports. They provide the support and traction you need for activities like hiking, running, or soccer.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 6, "name": "puma", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 6,
+        "name": "puma",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/puma/8.webp",
         "http://localhost:8000/products/puma/8.webp",
@@ -931,9 +1609,22 @@
       "description": "These shoes offer a combination of comfort and style, making them perfect for any occasion. The cushioned insole and sleek design ensure that your feet stay comfortable while looking great.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/1.webp",
         "http://localhost:8000/products/reebok/1.webp",
@@ -950,9 +1641,22 @@
       "description": "These shoes are perfect for anyone who leads an active lifestyle. Whether you're running errands or going for a walk, they provide the support and comfort you need to stay on your feet all day.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/2.webp",
         "http://localhost:8000/products/reebok/2.webp",
@@ -969,9 +1673,22 @@
       "description": "Designed with performance in mind, these shoes offer the necessary support for intense activities. Whether you're lifting weights or running, they ensure you perform at your best.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/3.webp",
         "http://localhost:8000/products/reebok/3.webp",
@@ -988,9 +1705,22 @@
       "description": "Featuring durable soles, these shoes provide excellent grip on wet and slippery surfaces. They are perfect for rainy days or outdoor activities where traction is essential.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/4.webp",
         "http://localhost:8000/products/reebok/4.webp",
@@ -1007,9 +1737,22 @@
       "description": "With a polished and professional design, these shoes are perfect for work environments. They provide both style and comfort for long workdays, ensuring you look and feel your best.",
       "is_popular": false,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/5.webp",
         "http://localhost:8000/products/reebok/5.webp",
@@ -1026,9 +1769,22 @@
       "description": "These shoes are designed to enhance your overall style. With their sleek lines and comfortable fit, they add a stylish touch to any outfit, making them a wardrobe essential.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/6.webp",
         "http://localhost:8000/products/reebok/6.webp",
@@ -1045,9 +1801,22 @@
       "description": "With their ergonomic design, these shoes provide excellent foot support, ensuring that your feet stay comfortable throughout the day. Whether you're walking or standing, they offer the support you need.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/7.webp",
         "http://localhost:8000/products/reebok/7.webp",
@@ -1064,9 +1833,22 @@
       "description": "These shoes combine a sporty aesthetic with comfort features, making them ideal for both athletic activities and everyday wear. The cushioned insole ensures comfort, while the design adds a modern touch.",
       "is_popular": true,
       "order": 0,
-      "sizes": [44, 42, 40],
-      "colors": ["rose", "emerald", "teal", "gray"],
-      "brand": { "id": 7, "name": "reebok", "icon": "" },
+      "sizes": [
+        44,
+        42,
+        40
+      ],
+      "colors": [
+        "rose",
+        "emerald",
+        "teal",
+        "gray"
+      ],
+      "brand": {
+        "id": 7,
+        "name": "reebok",
+        "icon": ""
+      },
       "images": [
         "http://localhost:8000/products/reebok/8.webp",
         "http://localhost:8000/products/reebok/8.webp",

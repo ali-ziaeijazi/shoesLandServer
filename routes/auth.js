@@ -43,12 +43,12 @@ router.post(
     db.users.push(newUser);
     writeDb(db);
 
+    console.log("user created: ", newUser.username, newUser.email)
     res.status(201).json({ message: 'User registered successfully' });
   }
 );
 
 
-// Login and issue access and refresh tokens
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
@@ -59,44 +59,75 @@ router.post('/login', async (req, res) => {
   }
 
   // Access Token
-  const accessToken = jwt.sign({ id: user.id, username: user.username }, JWT_SECRET, { expiresIn: '1h' });
+  const accessToken = jwt.sign(
+    { id: user.id, username: user.username },
+    JWT_SECRET,
+    { expiresIn: '5s' }
+  );
 
   // Refresh Token
-  const refreshToken = jwt.sign({ id: user.id, username: user.username }, JWT_REFRESH_SECRET, { expiresIn: '7d' });
+  const refreshToken = jwt.sign(
+    { id: user.id, username: user.username },
+    JWT_REFRESH_SECRET,
+    { expiresIn: '10m' }
+  );
 
-  // Store the refresh token in a secure place (e.g., database or in-memory store)
-  // For simplicity, we assume it's stored securely in a database
+  // Example of securely storing the refresh token (store it in your database)
+  // db.refreshTokens.push({ token: refreshToken, userId: user.id });
 
+  // Set the refresh token in an HTTP-only cookie
+  res.cookie('refreshToken', refreshToken, {
+    httpOnly: true,
+    secure: false, // Use secure in production only
+    sameSite: 'Strict', // Prevent CSRF
+    maxAge: 10 * 60* 1000, // 7 days
+  });
+
+  console.log('User logged in:', user.username);
   res.json({
     message: 'Login successful',
     accessToken,
-    refreshToken,
+    username:user.username
   });
 });
 
-// Refresh Token route
-router.post('/refresh-token', async (req, res) => {
-  const { refreshToken } = req.body;
-
+router.post('/refresh', (req, res) => {
+  const refreshToken = req.cookies || req.cookies?.refreshToken;
   if (!refreshToken) {
-    return res.status(401).json({ error: 'Refresh token is required.' });
+    return res.status(403).json({ error: 'Refresh token missing.' });
   }
 
   try {
-    // Verify refresh token
-    const decoded = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
-
-    // Issue new access token
-    const accessToken = jwt.sign(
-      { id: decoded.id, username: decoded.username },
-      JWT_SECRET,
-      { expiresIn: '1h' }
-    );
-
+    const payload = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
+    const accessToken = jwt.sign({ id: payload.id, username: payload.username }, JWT_SECRET, { expiresIn: '1h' });
     res.json({ accessToken });
   } catch (err) {
-    res.status(401).json({ error: 'Invalid or expired refresh token.' });
+    return res.status(403).json({ error: 'Invalid refresh token.' });
   }
+});
+
+
+
+// Endpoint to get user information based on the Access Token
+router.get('/whoami', function (req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) {
+    return res.status(401).json({ error: 'Access token is missing.' });
+  }
+
+  try {
+    // Verify the token and extract the payload
+    const payload = jwt.verify(token, JWT_SECRET);
+    req.user = payload; // Attach user info to the request object
+    next();
+  } catch (err) {
+    return res.status(403).json({ error: 'Invalid or expired access token.' });
+  }
+}, (req, res) => {
+  const { id, username } = req.user;
+  res.json({ id, username });
 });
 
 // Forgot Password
