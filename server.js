@@ -15,7 +15,7 @@ const productRoutes = require('./routes/products');
 const app = express();
 
 const corsOptions = {
-  origin: 'https://localhost:3000', // دامنه مجاز (جایگزین با دامنه فرانت‌اند)
+  origin: 'http://localhost:3000', // دامنه مجاز (جایگزین با دامنه فرانت‌اند)
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // متدهای مجاز
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization' ], // هدرهای مجاز
@@ -48,6 +48,6 @@ app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
-https.createServer(options, app).listen(443, () => {
-  console.log('Server is running on https://localhost');
-});
+// https.createServer(options, app).listen(443, () => {
+//   console.log('Server is running on https://localhost');
+// });
