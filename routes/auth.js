@@ -62,14 +62,14 @@ router.post('/login', async (req, res) => {
   const accessToken = jwt.sign(
     { id: user.id, username: user.username },
     JWT_SECRET,
-    { expiresIn: '5s' }
+    { expiresIn: '5m' }
   );
 
   // Refresh Token
   const refreshToken = jwt.sign(
     { id: user.id, username: user.username },
     JWT_REFRESH_SECRET,
-    { expiresIn: '10m' }
+    { expiresIn: '30m' }
   );
 
   // Example of securely storing the refresh token (store it in your database)
@@ -78,9 +78,9 @@ router.post('/login', async (req, res) => {
   // Set the refresh token in an HTTP-only cookie
   res.cookie('refreshToken', refreshToken, {
     httpOnly: true,
-    secure: false, // Use secure in production only
+    secure: true, // Use secure in production only
     sameSite: 'Strict', // Prevent CSRF
-    maxAge: 10 * 60* 1000, // 7 days
+    maxAge: 30 * 60* 1000, // 30min
   });
 
   console.log('User logged in:', user.username);
@@ -92,16 +92,17 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/refresh', (req, res) => {
-  const refreshToken = req.cookies || req.cookies?.refreshToken;
+  const refreshToken = req.cookies?.refreshToken;
   if (!refreshToken) {
     return res.status(403).json({ error: 'Refresh token missing.' });
   }
 
   try {
     const payload = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
-    const accessToken = jwt.sign({ id: payload.id, username: payload.username }, JWT_SECRET, { expiresIn: '1h' });
-    res.json({ accessToken });
+    const accessToken = jwt.sign({ id: payload.id, username: payload.username }, JWT_SECRET, { expiresIn: '5m' });
+    res.json({ accessToken,username:payload.username});
   } catch (err) {
+    console.error('Error verifying token:', err); // لاگ خطا
     return res.status(403).json({ error: 'Invalid refresh token.' });
   }
 });
@@ -123,7 +124,7 @@ router.get('/whoami', function (req, res, next) {
     req.user = payload; // Attach user info to the request object
     next();
   } catch (err) {
-    return res.status(403).json({ error: 'Invalid or expired access token.' });
+    return res.status(401).json({ error: 'Invalid or expired access token.' });
   }
 }, (req, res) => {
   const { id, username } = req.user;

@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const { readDb } = require('../utils/jsonDb'); // فرض می‌کنیم که شما از این برای خواندن دیتابیس استفاده می‌کنید
+const { readDb } = require('../utils/jsonDb'); 
 
-// دریافت لیست محصولات یا فیلتر شده بر اساس برندها و محبوبیت
+
 router.get('/', (req, res) => {
   try {
-    const { brands, is_popular } = req.query; // دریافت برندها و وضعیت محبوبیت از پارامتر کوئری
+    const { brands, is_popular,colors,sizes,search} = req.query; 
 
-    const db = readDb(); // خواندن داده‌ها از فایل JSON
-    const products = db.products || []; // دسترسی به محصولات از کلید 'products'
+    const db = readDb(); 
+    const products = db.products || []; 
 
-    // فیلتر کردن محصولات بر اساس برندها
+   
     let filteredProducts = products;
     if (brands) {
       filteredProducts = filteredProducts.filter(product => 
@@ -18,24 +18,46 @@ router.get('/', (req, res) => {
       );
     }
 
-    // فیلتر کردن محصولات بر اساس وضعیت محبوبیت (is_popular)
+    
     if (is_popular !== undefined) {
-      const isPopularBool = is_popular === 'true'; // تبدیل به boolean
+      const isPopularBool = is_popular === 'true'; 
       filteredProducts = filteredProducts.filter(product => 
         product.is_popular === isPopularBool
       );
     }
 
+    if(colors){
+      filteredProducts = filteredProducts.filter(product => 
+        product.colors.filter(color=>colors.includes(color)).length!=0
+      ); 
+    }
+
+    if(search){
+      filteredProducts = filteredProducts.filter(product => 
+      {
+        console.log(product.brand,product.name)
+        return (product.name.includes(search) || product.description.includes(search) || product.brand.name.includes(search) )
+      }
+      ); 
+    }
+
+    if(sizes){
+      filteredProducts = filteredProducts.filter(product => 
+        product.sizes.filter(size=>sizes.includes(size)).length!=0
+      ); 
+    }
+
+
     if (filteredProducts.length === 0) {
       return res.status(404).json({ error: 'No products found matching the criteria.' });
     }
 
-    // اضافه کردن فیلد 'isPopular' به هر محصول
+   
     const productsWithPopularity = filteredProducts.map(product => {
       return product;
     });
 
-    // ارسال محصولات فیلتر شده به کاربر
+    
     res.json( productsWithPopularity);
 
   } catch (error) {
