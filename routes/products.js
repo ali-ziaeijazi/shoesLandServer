@@ -65,4 +65,29 @@ router.get('/', (req, res) => {
   }
 });
 
+router.get('/:id', (req, res) => {
+  try {
+    const { id} = req.params; 
+    console.log("test",id)
+    const db = readDb(); 
+    const products = db.products || []; 
+
+   
+    let filteredProducts = products.find(product=>product.id==id);
+    
+
+
+    if (!filteredProducts) {
+      return res.status(404).json({ error: 'No products found matching the criteria.' });
+    }
+    
+    res.json( filteredProducts);
+
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to read products' });
+  }
+});
+
+
+
 module.exports = router;
