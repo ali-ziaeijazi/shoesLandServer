@@ -1611,7 +1611,7 @@
       "sold_quantity": 19671,
       "view_count": 46256,
       "rating": 4.2,
-      "description":"These shoes offer a combination of comfort and style, making them perfect for any occasion. The cushioned insole and sleek design ensure that your feet stay comfortable while looking great.",
+      "description": "These shoes offer a combination of comfort and style, making them perfect for any occasion. The cushioned insole and sleek design ensure that your feet stay comfortable while looking great.",
       "is_popular": false,
       "order": 0,
       "sizes": [
@@ -1861,5 +1861,18 @@
       ]
     }
   ],
-  "wishlist": []
+  "wishlist": [
+    {
+      "userId": 1735195776832,
+      "productId": 18
+    },
+    {
+      "userId": 1735195776832,
+      "productId": 24
+    },
+    {
+      "userId": 1735195776855,
+      "productId": 19
+    }
+  ]
 }

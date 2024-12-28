@@ -56,7 +56,13 @@ router.get('/', (req, res) => {
     });
 
     if (req.user) {
-      //TODO
+      const wishlist = db.wishlist.filter(item => item.userId == req.user.id)
+      if (wishlist.length)
+        res.json(
+          productsWithPopularity.map(item => ({
+            ...item, isFavorite: !!wishlist.find(w => w.productId == item.id)
+          }))
+        )
     } else {
       res.json(productsWithPopularity);
     }
@@ -70,7 +76,6 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   try {
     const { id } = req.params;
-    console.log("test", id)
     const db = readDb();
     const products = db.products || [];
 
@@ -84,7 +89,12 @@ router.get('/:id', (req, res) => {
     }
 
     if (req.user) {
-      //TODO
+      const wishlist = db.wishlist.filter(item => item.userId == req.user.id)
+      if (wishlist.length)
+        res.json(
+          {
+            ...filteredProducts, isFavorite: !!wishlist.find(w => w.productId == filteredProducts.id)
+          })
     } else {
       res.json(filteredProducts);
     }
