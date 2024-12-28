@@ -14,6 +14,7 @@ const shoeRoutes = require('./routes/shoes');
 const productRoutes = require('./routes/products'); 
 const wishlistRoutes = require('./routes/wishlist'); 
 const searchRoutes = require('./routes/searchHistory'); 
+//const cartRoutes = require('./routes/cart'); 
 const optionalAuthenticateToken = require('./routes/optionalProtected')
 const app = express();
 
@@ -40,6 +41,7 @@ app.use(cookieParser());
 app.use('/auth', authRoutes);
 app.use('/api/wishlist', protectedRoutes,wishlistRoutes);
 app.use('/api/search', protectedRoutes,searchRoutes);
+// app.use('/api/cart', protectedRoutes,cartRoutes);
 app.use('/api/brands',optionalAuthenticateToken, shoeRoutes); 
 app.use('/api/products',optionalAuthenticateToken, productRoutes); 
 
