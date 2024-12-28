@@ -1864,15 +1864,25 @@
   "wishlist": [
     {
       "userId": 1735195776832,
-      "productId": 18
-    },
-    {
-      "userId": 1735195776832,
       "productId": 24
     },
     {
       "userId": 1735195776855,
       "productId": 19
+    },
+    {
+      "userId": 1735195776832,
+      "productId": 18
+    }
+  ],
+  "searchHistory": [
+    {
+      "userId": 17335195776832,
+      "text": "ali"
+    },
+    {
+      "userId": 17351955776832,
+      "text": "ali"
     }
   ]
 }

@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
     const db = readDb(); 
     const wishlist = db.wishlist || []; 
 
-    if(wishlist.find(item=>(item,item.userId==id && item.productId==productId)))
+    if(wishlist.find(item=>(item.userId==id && item.productId==productId)))
     {
         db.wishlist = wishlist.filter(item=>!(item.userId==id && item.productId==productId))
         writeDb(db);
