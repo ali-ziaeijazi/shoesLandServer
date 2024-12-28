@@ -1,11 +1,22 @@
-const express = require('express');
-const authenticate = require('../middleware/auth');
-const router = express.Router();
+const jwt = require('jsonwebtoken');
 
-router.get('/profile', authenticate, (req, res) => {
-  res.json({
-    message: 'Welcome to your profile!',
-    user: req.user, 
-})});
+const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
 
-module.exports = router;
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1]; 
+
+  if (!token) {
+    return res.status(401).json({ error: 'Access token is missing.' });
+  }
+
+  try {
+    const payload = jwt.verify(token, JWT_SECRET); 
+    req.user = payload; 
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Invalid or expired access token.' });
+  }
+}
+
+module.exports = authenticateToken;

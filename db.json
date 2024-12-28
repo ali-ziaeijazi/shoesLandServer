@@ -1860,5 +1860,6 @@
         "http://localhost:8000/products/reebok/8.webp"
       ]
     }
-  ]
+  ],
+  "wishlist": []
 }

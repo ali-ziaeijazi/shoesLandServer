@@ -12,6 +12,8 @@ const authRoutes = require('./routes/auth');
 const protectedRoutes = require('./routes/protected');
 const shoeRoutes = require('./routes/shoes');  
 const productRoutes = require('./routes/products'); 
+const wishlistRoutes = require('./routes/wishlist'); 
+const optionalAuthenticateToken = require('./routes/optionalProtected')
 const app = express();
 
 const corsOptions = {
@@ -35,9 +37,9 @@ app.use(cookieParser());
 
 // Routes
 app.use('/auth', authRoutes);
-app.use('/protected', protectedRoutes);
-app.use('/api/brands', shoeRoutes); 
-app.use('/api/products', productRoutes); 
+app.use('/api/wishlist', protectedRoutes,wishlistRoutes);
+app.use('/api/brands',optionalAuthenticateToken, shoeRoutes); 
+app.use('/api/products',optionalAuthenticateToken, productRoutes); 
 
 
 app.use(express.static(path.join(__dirname, 'public')));

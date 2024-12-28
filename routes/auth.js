@@ -62,7 +62,7 @@ router.post('/login', async (req, res) => {
   const accessToken = jwt.sign(
     { id: user.id, username: user.username },
     JWT_SECRET,
-    { expiresIn: '5m' }
+    { expiresIn: '50m' }
   );
 
   // Refresh Token
