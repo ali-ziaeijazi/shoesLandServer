@@ -64,7 +64,7 @@ router.get('/', (req, res) => {
           }))
         )
     } else {
-      res.json(productsWithPopularity);
+      res.json(productsWithPopularity.map(item=>({...item,isFavorite:false})));
     }
 
 
@@ -96,7 +96,8 @@ router.get('/:id', (req, res) => {
             ...filteredProducts, isFavorite: !!wishlist.find(w => w.productId == filteredProducts.id)
           })
     } else {
-      res.json(filteredProducts);
+      res.json({
+        ...filteredProducts, isFavorite: false});
     }
 
 
