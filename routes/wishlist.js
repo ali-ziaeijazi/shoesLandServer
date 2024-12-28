@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
     }
 
 
-    if (wishlistItem) {
+    if (sizes) {
       filteredProducts = wishlistItem.filter(item =>
         item.sizes.filter(size => sizes.includes(size)).length != 0
       );
@@ -51,6 +51,7 @@ router.get('/', (req, res) => {
     res.json( wishlistItem);
 
   } catch (error) {
+    console.log("err",error)
     res.status(500).json({ error: 'Failed to read wishlist' });
   }
 });
