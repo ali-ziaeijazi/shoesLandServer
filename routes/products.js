@@ -58,11 +58,10 @@ router.get('/', (req, res) => {
     if (req.user) {
       const wishlist = db.wishlist.filter(item => item.userId == req.user.id)
       if (wishlist.length)
-        res.json(
-          productsWithPopularity.map(item => ({
-            ...item, isFavorite: !!wishlist.find(w => w.productId == item.id)
-          }))
-        )
+        result = productsWithPopularity.map(item => ({
+          ...item, isFavorite: !!wishlist.find(w => w.productId == item.id)
+        }))
+      res.json(result)
     } else {
       res.json(productsWithPopularity.map(item=>({...item,isFavorite:false})));
     }
