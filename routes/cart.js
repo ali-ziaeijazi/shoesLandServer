@@ -1,77 +1,121 @@
 const express = require('express');
 const router = express.Router();
-const { readDb ,writeDb } = require('../utils/jsonDb'); 
+const { readDb, writeDb } = require('../utils/jsonDb');
 
 
 router.get('/', (req, res) => {
   try {
-    const {search} = req.query
-    const db = readDb(); 
-    const searchHistory = db.searchHistory || []; 
-    let searchHistoryItems = searchHistory.filter(item=>item.userId== req.user.id)
+    const { search } = req.query
+    const db = readDb();
+    const cart = db.cart || [];
+    const products = db.products || []
 
-    if(search){
-        searchHistoryItems = searchHistoryItems.filter(item => item.text.includes(search) 
-      ); 
+
+
+    let cartItems = []
+    cart.filter(item => item.userId == req.user.id).forEach(item => {
+      const product = products.find(product => product.id == item.productId)
+      if (product) {
+        cartItems.push({ name: product.name, count: item.count, price: item.price, color: item.color, size: item.size, images: product.images, productId: item.productId })
+      }
+    })
+
+
+    if (search) {
+      cartItems = cartItems.filter(item => item.name.includes(search)
+      );
     }
-  
-    res.json( searchHistoryItems);
+
+    res.json(cartItems);
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to read saerch history' });
+    res.status(500).json({ error: 'Failed to get cart list' });
   }
 });
 
 router.post('/', (req, res) => {
   try {
-    const db = readDb(); 
-    const {text} = req.body
-    const {id} = req.user
-    const searchHistory = db.searchHistory || []; 
-    let searchHistoryItems = searchHistory.filter(item=>item.userId== id)
-
-    if(!searchHistoryItems.find(item=>(item.userId==id && item.text==text)))
-    {
-      db.searchHistory.push({
-        userId:id,
-        text:text
+    const db = readDb();
+    const { productId, color, size, count } = req.body
+    const { id } = req.user
+    const cart = db.cart || [];
+    let cartItems = cart.filter(item => item.userId == id)
+    if (!cartItems.find(item => item.productId == productId)) {
+      db.cart.push({
+        userId: id,
+        productId: productId,
+        color: color,
+        size: size,
+        count: count
       })
       writeDb(db);
-        res.status(201).json( "saerch text add to history successfully.");
+      res.status(201).json("product add to cart.");
     }
     else {
-        res.status(201).json( "saerch text add to history successfully.");
+      const found = cartItems.find(item => item.productId == productId)
+      found.count = count
+      found.color = color
+      found.size = size
+      writeDb(db);
+      res.status(200).json("This product has already been added to the shopping cart")
     }
   } catch (error) {
-    res.status(500).json({ error: 'Failed to add search history' });
+    res.status(500).json({ error: 'Failed to add product to cart' });
   }
 });
 
-router.delete('/', (req, res) => {
-    try {
-      const db = readDb(); 
-      const {text} = req.body
-      const {id} = req.user
-      const searchHistory = db.searchHistory || []; 
-      let searchHistoryItems = searchHistory.filter(item=>item.userId== id)
-    
-      if(!text)
-      {
-        db.searchHistory = searchHistory.filter(item=>item.userId!=id)
-        writeDb(db);
-        res.status(201).json( "all history search removed from history successfully.");
+router.put('/', (req, res) => {
+  try {
+    const db = readDb();
+    const { productId, color, size, count } = req.body
+    const { id } = req.user
+    const cart = db.cart || [];
+    let cartItems = cart.filter(item => item.userId == id)
+    if (cartItems.find(item => item.productId == productId)) {
+      if (count == 0) {
+        db.cart = cart.filter(item => !(item.userId == id && item.productId == productId))
       }
-      else if(searchHistoryItems.find(item=>(item.userId==id && item.text==text)))
-      {
-        db.searchHistory = searchHistory.filter(item=>!(item.userId==id && item.text==text))
-        writeDb(db);
-        res.status(201).json( "search text remove from wishlist successfully.");
+      else {
+        const found = cartItems.find(item => item.productId == productId)
+        found.count = count ?? found.count
+        found.color = color ?? found.color
+        found.size = size ?? found.size
       }
-    } catch (error) {
-        console.log(error)
-      res.status(500).json({ error: 'Failed to remove from history' });
+
+      writeDb(db);
+      res.status(200).json("information of product updated from cart list");
     }
-  });
+    else {
+      res.status(404).json("Product Not found to update form cart list");
+
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update product in cart list' });
+  }
+});
+
+router.delete('/:productId', (req, res) => {
+  try {
+    const db = readDb();
+    const { productId } = req.params
+    const { id } = req.user
+    const cart = db.cart || [];
+
+    console.log(productId, cart.find(item => (item.userId == id && item.productId == productId)))
+    if (productId && cart.find(item => (item.userId == id && item.productId == productId))) {
+      db.cart = cart.filter(item => !(item.userId == id && item.productId == productId))
+      writeDb(db);
+      res.status(200).json("product remove form cart list successfully");
+    }
+    else {
+      res.status(404).json("product not found to remove from cart list");
+
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: 'Failed to remove from cart list' });
+  }
+});
 
 
 

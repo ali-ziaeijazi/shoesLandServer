@@ -13,7 +13,7 @@
       "id": 1735195801508,
       "username": "aliziaeijazi",
       "email": "aliziaeijazi@gmail.com",
-      "password": "$2a$10$GwmMN6/SNBKlAddXBuIpMu.1mhh7PEV8X74sGRafipEWOT3mvVog6",
+      "password": "$2a$10$Zpn4SMnLb0.9SKxfg0vSr.a.P8TyFSMjNC1whCDuL44V3ci3zDBo.",
       "firstName": "ali",
       "lastName": "ziaei",
       "phone": "09123456789"
@@ -1873,6 +1873,10 @@
     {
       "userId": 1735195776832,
       "productId": 18
+    },
+    {
+      "userId": 1735219242438,
+      "productId": 42
     }
   ],
   "searchHistory": [
@@ -1883,6 +1887,11 @@
     {
       "userId": 17351955776832,
       "text": "ali"
+    },
+    {
+      "userId": 1735219242438,
+      "text": "hossein1234"
     }
-  ]
+  ],
+  "cart": []
 }

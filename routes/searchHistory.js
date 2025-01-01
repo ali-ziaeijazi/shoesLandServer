@@ -47,10 +47,10 @@ router.post('/', (req, res) => {
   }
 });
 
-router.delete('/', (req, res) => {
+router.delete('/:text', (req, res) => {
     try {
       const db = readDb(); 
-      const {text} = req.body
+      const {text} = req.params
       const {id} = req.user
       const searchHistory = db.searchHistory || []; 
       let searchHistoryItems = searchHistory.filter(item=>item.userId== id)
@@ -66,6 +66,9 @@ router.delete('/', (req, res) => {
         db.searchHistory = searchHistory.filter(item=>!(item.userId==id && item.text==text))
         writeDb(db);
         res.status(201).json( "search text remove from wishlist successfully.");
+      }
+      else {
+        res.status(404).json("searchText not fount to remove")
       }
     } catch (error) {
         console.log(error)
