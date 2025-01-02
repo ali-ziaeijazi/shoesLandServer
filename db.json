@@ -1,28 +1,19 @@
 {
   "users": [
     {
-      "id": 1735195776832,
-      "username": "aliziaeijazi1",
-      "email": "aliziaeijazi1@gmail.com",
-      "password": "$2a$10$B7N2gIfegfMoUMYsS91yy.HWfLX2k2/Jd9BjuMBK4M6opqAMmN4C.",
-      "firstName": "ali",
-      "lastName": "ziaei",
-      "phone": "09123456789"
-    },
-    {
-      "id": 1735195801508,
+      "id": 1735801402593,
       "username": "aliziaeijazi",
       "email": "aliziaeijazi@gmail.com",
-      "password": "$2a$10$Zpn4SMnLb0.9SKxfg0vSr.a.P8TyFSMjNC1whCDuL44V3ci3zDBo.",
+      "password": "$2a$10$c/9XrtX5D.yvubG2tcyfruKaiLh4UOL3SxIGCW3M15AEr7OFt22jq",
       "firstName": "ali",
       "lastName": "ziaei",
       "phone": "09123456789"
     },
     {
-      "id": 1735219242438,
-      "username": "alizia",
-      "email": "alizia1379@gmail.com",
-      "password": "$2a$10$rnoQrRqCiroK3y5B/qzpVOsbX5l60UM0ahMhAHkVPYvKed5Qe5QSK",
+      "id": 1735824532536,
+      "username": "aliziaeijazi5",
+      "email": "aliziaeijazi5@gmail.com",
+      "password": "$2a$10$jx7XJOkH42Ovg2ejMxHtSe4jezzoktDVBmMpMxtN6tfktwxKELgy.",
       "firstName": "ali",
       "lastName": "ziaei",
       "phone": "09123456789"
@@ -1861,37 +1852,86 @@
       ]
     }
   ],
-  "wishlist": [
+  "wishlist": [],
+  "searchHistory": [],
+  "cart": [],
+  "address": [],
+  "discount": [
     {
-      "userId": 1735195776832,
-      "productId": 24
+      "code": "ZEBRAFLY10",
+      "discount": 10
     },
     {
-      "userId": 1735195776855,
-      "productId": 19
+      "code": "CLOUDWORM15",
+      "discount": 15
     },
     {
-      "userId": 1735195776832,
-      "productId": 18
+      "code": "MOONFISH20",
+      "discount": 20
     },
     {
-      "userId": 1735219242438,
-      "productId": 42
+      "code": "DRAGONBEE25",
+      "discount": 25
+    },
+    {
+      "code": "PHOENIXCAT30",
+      "discount": 30
+    },
+    {
+      "code": "UNICORNANT35",
+      "discount": 35
+    },
+    {
+      "code": "WOLFBIRD40",
+      "discount": 40
+    },
+    {
+      "code": "TIGERLEAF45",
+      "discount": 45
+    },
+    {
+      "code": "LIZARDFROG50",
+      "discount": 50
+    },
+    {
+      "code": "EAGLEFOX55",
+      "discount": 55
+    },
+    {
+      "code": "SHARKMOUSE60",
+      "discount": 60
+    },
+    {
+      "code": "PANDAOWL65",
+      "discount": 65
+    },
+    {
+      "code": "BATCROW70",
+      "discount": 70
+    },
+    {
+      "code": "TURTLESUN75",
+      "discount": 75
+    },
+    {
+      "code": "LIONWAVE80",
+      "discount": 80
+    },
+    {
+      "code": "BEARWIND85",
+      "discount": 85
+    },
+    {
+      "code": "ELEPHANTSTAR90",
+      "discount": 90
+    },
+    {
+      "code": "JAGUARFIRE95",
+      "discount": 95
+    },
+    {
+      "code": "PEACOCKICE100",
+      "discount": 100
     }
-  ],
-  "searchHistory": [
-    {
-      "userId": 17335195776832,
-      "text": "ali"
-    },
-    {
-      "userId": 17351955776832,
-      "text": "ali"
-    },
-    {
-      "userId": 1735219242438,
-      "text": "hossein1234"
-    }
-  ],
-  "cart": []
+  ]
 }

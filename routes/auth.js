@@ -195,4 +195,16 @@ router.post(
   }
 );
 
+router.post('/logout', (req, res) => {
+  res.clearCookie('refreshToken', {
+    httpOnly: true,
+    secure: true, 
+    sameSite: 'Strict', 
+  });
+
+  console.log('User logged out.');
+  res.json({ message: 'Logout successful' });
+});
+
+
 module.exports = router;

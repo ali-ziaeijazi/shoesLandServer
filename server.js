@@ -15,6 +15,8 @@ const productRoutes = require('./routes/products');
 const wishlistRoutes = require('./routes/wishlist'); 
 const searchRoutes = require('./routes/searchHistory'); 
 const cartRoutes = require('./routes/cart'); 
+const addressRoutes = require('./routes/address'); 
+const discountRoutes = require('./routes/discount'); 
 const optionalAuthenticateToken = require('./routes/optionalProtected')
 const app = express();
 
@@ -44,6 +46,8 @@ app.use('/api/search', protectedRoutes,searchRoutes);
 app.use('/api/cart', protectedRoutes,cartRoutes);
 app.use('/api/brands',optionalAuthenticateToken, shoeRoutes); 
 app.use('/api/products',optionalAuthenticateToken, productRoutes); 
+app.use('/api/address',protectedRoutes, addressRoutes); 
+app.use('/api/discount',optionalAuthenticateToken, discountRoutes); 
 
 
 app.use(express.static(path.join(__dirname, 'public')));
