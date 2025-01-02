@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
         productId: productId,
         color: color,
         size: size,
-        count: countو
+        count: count
         
       })
       writeDb(db);
