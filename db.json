@@ -1,24 +1,5 @@
 {
-  "users": [
-    {
-      "id": 1735801402593,
-      "username": "aliziaeijazi",
-      "email": "aliziaeijazi@gmail.com",
-      "password": "$2a$10$c/9XrtX5D.yvubG2tcyfruKaiLh4UOL3SxIGCW3M15AEr7OFt22jq",
-      "firstName": "ali",
-      "lastName": "ziaei",
-      "phone": "09123456789"
-    },
-    {
-      "id": 1735824532536,
-      "username": "aliziaeijazi5",
-      "email": "aliziaeijazi5@gmail.com",
-      "password": "$2a$10$jx7XJOkH42Ovg2ejMxHtSe4jezzoktDVBmMpMxtN6tfktwxKELgy.",
-      "firstName": "ali",
-      "lastName": "ziaei",
-      "phone": "09123456789"
-    }
-  ],
+  "users": [],
   "brands": [
     {
       "id": 1,
@@ -1932,6 +1913,6 @@
     {
       "code": "PEACOCKICE100",
       "discount": 100
-    }
-  ]
+    }],
+  "orders": []
 }

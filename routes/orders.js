@@ -5,122 +5,77 @@ const { readDb, writeDb } = require('../utils/jsonDb');
 
 router.get('/', (req, res) => {
   try {
-    const { search } = req.query
+    const { search, status } = req.query
+    const id = req.user.id
     const db = readDb();
-    const cart = db.cart || [];
-    const products = db.products || []
-
-
-
-    let cartItems = []
-    cart.filter(item => item.userId == req.user.id).forEach(item => {
-      const product = products.find(product => product.id == item.productId)
-      console.log(product)
-      if (product) {
-        cartItems.push({ name: product.name, count: item.count, price: product.price,total_price: product.price* item.count, color: item.color, size: item.size, images: product.images, productId: item.productId })
-      }
-    })
-
-
-    if (search) {
-      cartItems = cartItems.filter(item => item.name.includes(search)
-      );
+    const orders = db.orders || [];
+    let ordersList = orders.filter(item => item.userId == id)
+    if (status == "completed" || status == "indelivery") {
+      ordersList = ordersList.filter(item => item.status == status)
     }
-    console.log(cartItems)
-
-    res.json(cartItems);
+    if (search) {
+      ordersList = ordersList.filter(item => item.name.includes(search));
+    }
+    res.json(ordersList);
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to get cart list' });
+    res.status(500).json({ error: 'Failed to get order list' });
   }
 });
 
 router.post('/', (req, res) => {
   try {
     const db = readDb();
-    const { productId, color, size, count } = req.body
+    const { products, discount = 0 } = req.body
     const { id } = req.user
-    const cart = db.cart || [];
-    let cartItems = cart.filter(item => item.userId == id)
-    if (!cartItems.find(item => item.productId == productId)) {
-      db.cart.push({
+    let cart = db.cart || []
+    let orders = db.orders || []
+    const newOrders = []
+    products.forEach(product => {
+      const newObj = {
         userId: id,
-        productId: productId,
-        color: color,
-        size: size,
-        count: countو
-        
-      })
-      writeDb(db);
-      res.status(201).json("product add to cart.");
-    }
-    else {
-      const found = cartItems.find(item => item.productId == productId)
-      found.count = count
-      found.color = color
-      found.size = size
-      writeDb(db);
-      res.status(200).json("This product has already been added to the shopping cart")
-    }
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to add product to cart' });
-  }
-});
-
-router.put('/:productId', (req, res) => {
-  try {
-    const db = readDb();
-    const {productId} = req.params
-    const { color, size, count } = req.body
-    const { id } = req.user
-    const cart = db.cart || [];
-    let cartItems = cart.filter(item => item.userId == id)
-    if (cartItems.find(item => item.productId == productId)) {
-      if (count == 0) {
-        db.cart = cart.filter(item => !(item.userId == id && item.productId == productId))
+        status: "indelivery",
+        name: product.name,
+        productId: product.productId,
+        count: product.count,
+        color: product.color,
+        size: product.size,
+        images: product.images,
+        price: product.price * (1 - (discount / 100)),
+        total_price: product.total_price * (1 - (discount / 100))
       }
-      else {
-        const found = cartItems.find(item => item.productId == productId)
-        found.count = count ?? found.count
-        found.color = color ?? found.color
-        found.size = size ?? found.size
-      }
+      newOrders.push(newObj)
+      cart = cart.filter(item => !(item.userId == id && item.productId == product.productId))
+    });
 
-      writeDb(db);
-      res.status(200).json("information of product updated from cart list");
-    }
-    else {
-      res.status(404).json("Product Not found to update form cart list");
-
-    }
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to update product in cart list' });
-  }
-});
-
-router.delete('/:productId', (req, res) => {
-  try {
-    const db = readDb();
-    const { productId } = req.params
-    const { id } = req.user
-    const cart = db.cart || [];
-
-    console.log(productId, cart.find(item => (item.userId == id && item.productId == productId)))
-    if (productId && cart.find(item => (item.userId == id && item.productId == productId))) {
-      db.cart = cart.filter(item => !(item.userId == id && item.productId == productId))
-      writeDb(db);
-      res.status(200).json("product remove form cart list successfully");
-    }
-    else {
-      res.status(404).json("product not found to remove from cart list");
-
-    }
+    orders.push(...newOrders)
+    db.orders = orders
+    db.cart = cart
+    writeDb(db)
+    res.status(201).json("orders created successfully")
   } catch (error) {
     console.log(error)
-    res.status(500).json({ error: 'Failed to remove from cart list' });
+    res.status(500).json({ error: 'Failed to add product to orders' });
   }
 });
 
 
+
+router.post('/changeStatus', (req, res) => {
+  try {
+    const db = readDb();
+    const { products } = req.body
+    const { id } = req.user
+    products.forEach(product => {
+      found = db.orders.find(item => item.userId == id && item.productId == product)
+      if (found)
+        found.status = "completed"
+    });
+    writeDb(db)
+    res.status(201).json("orders status changed successfully")
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to change status product to orders' });
+  }
+});
 
 module.exports = router;

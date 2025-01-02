@@ -17,6 +17,7 @@ const searchRoutes = require('./routes/searchHistory');
 const cartRoutes = require('./routes/cart'); 
 const addressRoutes = require('./routes/address'); 
 const discountRoutes = require('./routes/discount'); 
+const ordersRoutes = require('./routes/orders'); 
 const optionalAuthenticateToken = require('./routes/optionalProtected')
 const app = express();
 
@@ -47,6 +48,7 @@ app.use('/api/cart', protectedRoutes,cartRoutes);
 app.use('/api/brands',optionalAuthenticateToken, shoeRoutes); 
 app.use('/api/products',optionalAuthenticateToken, productRoutes); 
 app.use('/api/address',protectedRoutes, addressRoutes); 
+app.use('/api/orders',protectedRoutes, ordersRoutes); 
 app.use('/api/discount',optionalAuthenticateToken, discountRoutes); 
 
 
