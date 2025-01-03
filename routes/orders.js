@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   try {
     const db = readDb();
-    const { products, discount = 0 } = req.body
+    const { products, discount = 0,shippingType,address } = req.body
     const { id } = req.user
     let cart = db.cart || []
     let orders = db.orders || []
@@ -43,7 +43,9 @@ router.post('/', (req, res) => {
         size: product.size,
         images: product.images,
         price: product.price * (1 - (discount / 100)),
-        total_price: product.total_price * (1 - (discount / 100))
+        total_price: product.total_price * (1 - (discount / 100)),
+        shippingType:shippingType,
+        address:address
       }
       newOrders.push(newObj)
       cart = cart.filter(item => !(item.userId == id && item.productId == product.productId))
