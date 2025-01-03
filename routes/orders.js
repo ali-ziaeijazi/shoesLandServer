@@ -19,7 +19,8 @@ router.get('/', (req, res) => {
     res.json(ordersList);
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to get order list' });
+    console.log("orders:get: ",error)
+    res.status(500).json({ message: 'Failed to get order list' });
   }
 });
 
@@ -52,10 +53,10 @@ router.post('/', (req, res) => {
     db.orders = orders
     db.cart = cart
     writeDb(db)
-    res.status(201).json("orders created successfully")
+    res.status(201).json({ message: "orders created successfully" })
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: 'Failed to add product to orders' });
+    console.log("orders:post: ",error)
+    res.status(500).json({ message: 'Failed to add product to orders' });
   }
 });
 
@@ -72,9 +73,10 @@ router.post('/changeStatus', (req, res) => {
         found.status = "completed"
     });
     writeDb(db)
-    res.status(201).json("orders status changed successfully")
+    res.status(201).json({ message: "orders status changed successfully" })
   } catch (error) {
-    res.status(500).json({ error: 'Failed to change status product to orders' });
+    console.log("orders:changestatus: ",error)
+    res.status(500).json({ message: 'Failed to change status product to orders' });
   }
 });
 

@@ -15,12 +15,13 @@ router.get('/', (req, res) => {
       selectedItem = addressItem.find(item => item.isSelected)
       if(selectedItem)
         res.json({ name: selectedItem.name, address: selectedItem.address, isSelected: selectedItem.isSelected })
-      else res.status(404).json({ error: 'not found any default address for user' });
+      else res.status(404).json({ message: 'not found any default address for user' });
     }
     res.json(addressItem.map(item => ({ name: item.name, address: item.address, isSelected: item.isSelected })));
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to get address list' });
+    console.log("address:get: ",error)
+    res.status(500).json({ message: 'Failed to get address list' });
   }
 });
 
@@ -41,10 +42,10 @@ router.post('/', (req, res) => {
           address: address,
           isSelected: false
         })
-        res.status(201).json("address add to user addersses.");
+        res.status(201).json({message:"address add to user addersses."});
       }
       else {
-        res.status(409).json("an address have dupplicate name with another address.Please add address with another name.")
+        res.status(409).json({message:"an address have dupplicate name with another address.Please add address with another name."})
       }
     }
     else {
@@ -52,12 +53,13 @@ router.post('/', (req, res) => {
         item.isSelected = false
       });
       isInAddressList.isSelected = true
-      res.status(201).json("address selected for defualt address.");
+      res.status(201).json({message:"address selected for defualt address."});
 
     }
     writeDb(db);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to add address to user Addresses' });
+    console.log("address:create: ",error)
+    res.status(500).json({ message: 'Failed to add address to user Addresses' });
   }
 });
 
@@ -73,15 +75,16 @@ router.put('/:name', (req, res) => {
     let isInAddressList = addressItem.find(item => item.name == name)
     if (isInAddressList) {
       isInAddressList.address = address
-      res.status(200).json("address Edited successfully");
+      res.status(200).json({message:"address Edited successfully"});
     }
     else {
-      res.status(404).json("an address not found to edit")
+      res.status(404).json({message:"an address not found to edit"})
     }
     writeDb(db);
   }
   catch (error) {
-    res.status(500).json({ error: 'Failed to edit address from user Addresses' });
+    console.log("address:update: ",error)
+    res.status(500).json({ message: 'Failed to edit address from user Addresses' });
   }
 });
 
@@ -96,14 +99,15 @@ router.delete('/:name', (req, res) => {
     if(isInAddressList)
     {
       db.address = db.address.filter(item=>!(item.name==name && item.userId == id))
-      res.status(200).json("address remove form user address list successfully");
+      res.status(200).json({message:"address remove form user address list successfully"});
       writeDb(db);
     }
     else {
-      res.status(404).json("address not found to remove from address list");
+      res.status(404).json({message:"address not found to remove from address list"});
     }
   } catch (error) {
-    res.status(500).json({ error: 'Failed to remove from cart list' });
+    console.log("address:delete: ",error)
+    res.status(500).json({ message: 'Failed to remove from cart list' });
   }
 });
 

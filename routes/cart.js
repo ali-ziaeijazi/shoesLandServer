@@ -26,12 +26,11 @@ router.get('/', (req, res) => {
       cartItems = cartItems.filter(item => item.name.includes(search)
       );
     }
-    console.log(cartItems)
-
     res.json(cartItems);
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to get cart list' });
+    console.log("Cart:get: ",error)
+    res.status(500).json({ message: 'Failed to get cart list' });
   }
 });
 
@@ -52,7 +51,7 @@ router.post('/', (req, res) => {
         
       })
       writeDb(db);
-      res.status(201).json("product add to cart.");
+      res.status(201).json({message:"product add to cart."});
     }
     else {
       const found = cartItems.find(item => item.productId == productId)
@@ -60,10 +59,11 @@ router.post('/', (req, res) => {
       found.color = color
       found.size = size
       writeDb(db);
-      res.status(200).json("This product has already been added to the shopping cart")
+      res.status(200).json({message:"This product has already been added to the shopping cart"})
     }
   } catch (error) {
-    res.status(500).json({ error: 'Failed to add product to cart' });
+    console.log("Cart:post: ",error)
+    res.status(500).json({ message: 'Failed to add product to cart' });
   }
 });
 
@@ -87,14 +87,15 @@ router.put('/:productId', (req, res) => {
       }
 
       writeDb(db);
-      res.status(200).json("information of product updated from cart list");
+      res.status(200).json({message:"information of product updated from cart list"});
     }
     else {
-      res.status(404).json("Product Not found to update form cart list");
+      res.status(404).json({message:"Product Not found to update form cart list"});
 
     }
   } catch (error) {
-    res.status(500).json({ error: 'Failed to update product in cart list' });
+    console.log("Cart:update: ",error)
+    res.status(500).json({ message: 'Failed to update product in cart list' });
   }
 });
 
@@ -109,15 +110,15 @@ router.delete('/:productId', (req, res) => {
     if (productId && cart.find(item => (item.userId == id && item.productId == productId))) {
       db.cart = cart.filter(item => !(item.userId == id && item.productId == productId))
       writeDb(db);
-      res.status(200).json("product remove form cart list successfully");
+      res.status(200).json({message:"product remove form cart list successfully"});
     }
     else {
-      res.status(404).json("product not found to remove from cart list");
+      res.status(404).json({message:"product not found to remove from cart list"});
 
     }
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: 'Failed to remove from cart list' });
+    console.log("Cart:delete: ",error)
+    res.status(500).json({ message: 'Failed to remove from cart list' });
   }
 });
 

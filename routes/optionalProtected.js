@@ -18,7 +18,7 @@ function optionalAuthenticateToken(req, res, next) {
     req.user = null; 
   }
 
-  next(); // ادامه درخواست
+  next(); 
 }
 
 module.exports = optionalAuthenticateToken;

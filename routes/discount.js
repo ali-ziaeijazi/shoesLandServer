@@ -15,10 +15,11 @@ router.get('/:discount', (req, res) => {
     if (discountMatch) {
       res.json({discount:discountMatch.discount});
     }
-    else res.status(404).json({error:"this code not valid"})
+    else res.status(404).json({message:"this code not valid"})
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to read saerch history' });
+    console.log("discount:get: ",error)
+    res.status(500).json({ message: 'Failed to read saerch history' });
   }
 });
 

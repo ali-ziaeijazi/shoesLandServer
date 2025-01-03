@@ -28,13 +28,13 @@ router.post(
   ],
   async (req, res) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+    if (!errors.isEmpty()) return res.status(400).json({ message: errors.array() });
 
     const { username, email, password, firstName, lastName, phone } = req.body;
 
     const db = readDb();
     if (db.users.some((user) => user.email === email || user.username === username)) {
-      return res.status(400).json({ error: 'Email or username already exists.' });
+      return res.status(400).json({ message: 'Email or username already exists.' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
   const db = readDb();
   const user = db.users.find((user) => user.username === username);
   if (!user || !(await bcrypt.compare(password, user.password))) {
-    return res.status(401).json({ error: 'Invalid username or password.' });
+    return res.status(401).json({ message: 'Invalid username or password.' });
   }
 
   // Access Token
@@ -94,7 +94,7 @@ router.post('/login', async (req, res) => {
 router.post('/refresh', (req, res) => {
   const refreshToken = req.cookies?.refreshToken;
   if (!refreshToken) {
-    return res.status(403).json({ error: 'Refresh token missing.' });
+    return res.status(403).json({ message: 'Refresh token missing.' });
   }
 
   try {
@@ -103,7 +103,7 @@ router.post('/refresh', (req, res) => {
     res.json({ accessToken,username:payload.username});
   } catch (err) {
     console.error('Error verifying token:', err); // لاگ خطا
-    return res.status(403).json({ error: 'Invalid refresh token.' });
+    return res.status(403).json({ message: 'Invalid refresh token.' });
   }
 });
 
@@ -115,7 +115,7 @@ router.get('/whoami', function (req, res, next) {
   const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
-    return res.status(401).json({ error: 'Access token is missing.' });
+    return res.status(401).json({ message: 'Access token is missing.' });
   }
 
   try {
@@ -124,7 +124,7 @@ router.get('/whoami', function (req, res, next) {
     req.user = payload; // Attach user info to the request object
     next();
   } catch (err) {
-    return res.status(401).json({ error: 'Invalid or expired access token.' });
+    return res.status(401).json({ message: 'Invalid or expired access token.' });
   }
 }, (req, res) => {
   const { id, username } = req.user;
@@ -140,7 +140,7 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() }); // اگر ایمیل معتبر نیست
+      return res.status(400).json({ message: errors.array() }); // اگر ایمیل معتبر نیست
     }
 
     const { email } = req.body;
@@ -148,7 +148,7 @@ router.post(
     const db = readDb();
     const user = db.users.find((user) => user.email === email);
     if (!user) {
-      return res.status(404).json({ error: 'User not found.' }); // اگر کاربر وجود نداشته باشد
+      return res.status(404).json({ message: 'User not found.' }); // اگر کاربر وجود نداشته باشد
     }
 
     const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '15m' });
@@ -158,7 +158,7 @@ router.post(
       res.json({ message: 'Reset email sent' });
     } catch (error) {
       console.error('Error during sending reset email:', error);  // چاپ خطا
-      res.status(500).json({ error: 'Failed to send reset email.' });
+      res.status(500).json({ message: 'Failed to send reset email.' });
     }
   }
 );
@@ -174,7 +174,7 @@ router.post(
   ],
   async (req, res) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+    if (!errors.isEmpty()) return res.status(400).json({ message: errors.array() });
 
     const { token, newPassword } = req.body;
 
@@ -183,14 +183,14 @@ router.post(
       const db = readDb();
 
       const user = db.users.find((user) => user.id === decoded.id);
-      if (!user) return res.status(404).json({ error: 'User not found.' });
+      if (!user) return res.status(404).json({ message: 'User not found.' });
 
       user.password = await bcrypt.hash(newPassword, 10);
       writeDb(db);
 
       res.json({ message: 'Password reset successfully' });
     } catch (err) {
-      res.status(400).json({ error: 'Invalid or expired token.' });
+      res.status(400).json({ message: 'Invalid or expired token.' });
     }
   }
 );
@@ -201,8 +201,6 @@ router.post('/logout', (req, res) => {
     secure: true, 
     sameSite: 'Strict', 
   });
-
-  console.log('User logged out.');
   res.json({ message: 'Logout successful' });
 });
 

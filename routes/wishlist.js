@@ -51,8 +51,8 @@ router.get('/', (req, res) => {
     res.json( wishlistItem);
 
   } catch (error) {
-    console.log("err",error)
-    res.status(500).json({ error: 'Failed to read wishlist' });
+    console.log("whishlist:Get: ",error)
+    res.status(500).json({ message: 'Failed to read wishlist' });
   }
 });
 
@@ -67,7 +67,7 @@ router.post('/', (req, res) => {
     {
         db.wishlist = wishlist.filter(item=>!(item.userId==id && item.productId==productId))
         writeDb(db);
-        res.status(201).json( "product remove from wishlist successfully.");
+        res.status(200).json({ message:"product remove from wishlist successfully."});
     }
     else{
       db.wishlist.push({
@@ -75,13 +75,13 @@ router.post('/', (req, res) => {
         productId:productId
       })
       writeDb(db);
-        res.status(201).json( "product add to wishlist successfully.");
+        res.status(201).json( {message:"product add to wishlist successfully."});
     }
 
   
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: 'Failed to add/remove from wishlist' });
+    console.log("whishlist:Post: ",error)
+    res.status(500).json({ message: 'Failed to add/remove from wishlist' });
   }
 });
 

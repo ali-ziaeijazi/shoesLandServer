@@ -47,7 +47,7 @@ router.get('/', (req, res) => {
 
 
     if (filteredProducts.length === 0) {
-      return res.status(404).json({ error: 'No products found matching the criteria.' });
+      return res.status(404).json({ message: 'No products found matching the criteria.' });
     }
 
 
@@ -67,8 +67,8 @@ router.get('/', (req, res) => {
 
 
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: 'Failed to read products' });
+    console.log("products:get: ",error)
+    res.status(500).json({ message: 'Failed to read products' });
   }
 });
 
@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
 
 
     if (!filteredProducts) {
-      return res.status(404).json({ error: 'No products found matching the criteria.' });
+      return res.status(404).json({ message: 'No products found matching the criteria.' });
     }
 
     if (req.user) {
@@ -102,7 +102,8 @@ router.get('/:id', (req, res) => {
 
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to read products' });
+    console.log("searchHistory:get: ",error)
+    res.status(500).json({ message: 'Failed to read products' });
   }
 });
 

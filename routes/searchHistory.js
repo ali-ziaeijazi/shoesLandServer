@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
     res.json(searchHistoryItems);
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to read saerch history' });
+    console.log("searchHistory:get: ",error)
+    res.status(500).json({ message: 'Failed to read saerch history' });
   }
 });
 
@@ -36,13 +37,14 @@ router.post('/', (req, res) => {
         text: text
       })
       writeDb(db);
-      res.status(201).json("saerch text add to history successfully.");
+      res.status(201).json({message:"saerch text add to history successfully."});
     }
     else {
-      res.status(201).json("saerch text add to history successfully.");
+      res.status(201).json({message:"saerch text add to history successfully."});
     }
   } catch (error) {
-    res.status(500).json({ error: 'Failed to add search history' });
+    console.log("searchHistory:post: ",error)
+    res.status(500).json({ message: 'Failed to add search history' });
   }
 });
 
@@ -56,10 +58,10 @@ router.delete('/', (req, res) => {
 
     db.searchHistory = searchHistory.filter(item => item.userId != id)
     writeDb(db);
-    res.status(201).json("all history search removed from history successfully.");
+    res.status(201).json({message:"all history search removed from history successfully."});
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: 'Failed to remove from history' });
+    console.log("searchHistory:delete: ",error)
+    res.status(500).json({ message: 'Failed to remove from history' });
   }
 });
 
@@ -74,14 +76,14 @@ router.delete('/:text', (req, res) => {
     if (searchHistoryItems.find(item => (item.userId == id && item.text == text))) {
       db.searchHistory = searchHistory.filter(item => !(item.userId == id && item.text == text))
       writeDb(db);
-      res.status(201).json("search text remove from wishlist successfully.");
+      res.status(201).json({message:"search text remove from wishlist successfully."});
     }
     else {
-      res.status(404).json("searchText not fount to remove")
+      res.status(404).json({message:"searchText not fount to remove"})
     }
   } catch (error) {
-    console.log(error)
-    res.status(500).json({ error: 'Failed to remove from history' });
+    console.log("searchHistory:delete: ",error)
+    res.status(500).json({ message: 'Failed to remove from history' });
   }
 });
 

@@ -7,7 +7,7 @@ function authenticateToken(req, res, next) {
   const token = authHeader && authHeader.split(' ')[1]; 
 
   if (!token) {
-    return res.status(401).json({ error: 'Access token is missing.' });
+    return res.status(401).json({ message: 'Access token is missing.' });
   }
 
   try {
@@ -15,7 +15,7 @@ function authenticateToken(req, res, next) {
     req.user = payload; 
     next();
   } catch (err) {
-    return res.status(401).json({ error: 'Invalid or expired access token.' });
+    return res.status(401).json({ message: 'Invalid or expired access token.' });
   }
 }
 
