@@ -1,5 +1,24 @@
 {
-  "users": [],
+  "users": [
+    {
+      "id": 1735885491483,
+      "username": "alizia",
+      "email": "alizia1379@gmail.com",
+      "password": "$2a$10$/SVZcWSeCb9PAA1ohJBOK.7C134hif5EgwWRkWfRa4iVvVqOMkrF6",
+      "firstName": "ali",
+      "lastName": "ziaei",
+      "phone": "09123456789"
+    },
+    {
+      "id": 1735885505332,
+      "username": "aliziaeijazi",
+      "email": "aliziaeijazi@gmail.com",
+      "password": "$2a$10$LY6drT09Spm5bfrfbmOVZOB7uWOSLA9DduV6yjxcAusXh0MGe.YnG",
+      "firstName": "ali",
+      "lastName": "ziaei",
+      "phone": "09123456789"
+    }
+  ],
   "brands": [
     {
       "id": 1,
@@ -1833,10 +1852,83 @@
       ]
     }
   ],
-  "wishlist": [],
-  "searchHistory": [],
+  "wishlist": [
+    {
+      "userId": 1735885505332,
+      "productId": 21
+    },
+    {
+      "userId": 1735885505332,
+      "productId": 34
+    },
+    {
+      "userId": 1735885505332,
+      "productId": 5
+    },
+    {
+      "userId": 1735885491483,
+      "productId": 25
+    },
+    {
+      "userId": 1735885491483,
+      "productId": 5
+    },
+    {
+      "userId": 1735885491483,
+      "productId": 36
+    }
+  ],
+  "searchHistory": [
+    {
+      "userId": 1735885505332,
+      "text": "user1"
+    },
+    {
+      "userId": 1735885505332,
+      "text": "user1_2"
+    },
+    {
+      "userId": 1735885505332,
+      "text": "user1_3"
+    },
+    {
+      "userId": 1735885505332,
+      "text": "user1_4"
+    }
+  ],
   "cart": [],
-  "address": [],
+  "address": [
+    {
+      "userId": 1735885505332,
+      "name": "FatherHome",
+      "address": "Yazd",
+      "isSelected": false
+    },
+    {
+      "userId": 1735885505332,
+      "name": "BrotherHome",
+      "address": "Isfahan",
+      "isSelected": false
+    },
+    {
+      "userId": 1735885505332,
+      "name": "Home",
+      "address": "Tehran",
+      "isSelected": false
+    },
+    {
+      "userId": 1735885491483,
+      "name": "Home",
+      "address": "Mashhad",
+      "isSelected": true
+    },
+    {
+      "userId": 1735885491483,
+      "name": "Office",
+      "address": "Kerman",
+      "isSelected": false
+    }
+  ],
   "discount": [
     {
       "code": "ZEBRAFLY10",
@@ -1913,6 +2005,134 @@
     {
       "code": "PEACOCKICE100",
       "discount": 100
-    }],
-  "orders": []
+    }
+  ],
+  "orders": [
+    {
+      "userId": 1735885491483,
+      "status": "indelivery",
+      "name": "Puma Ignite Flash",
+      "productId": 48,
+      "count": 1,
+      "color": "red",
+      "size": 20,
+      "images": [
+        "http://localhost:8000/products/puma/8.webp",
+        "http://localhost:8000/products/puma/8.webp",
+        "http://localhost:8000/products/puma/8.webp"
+      ],
+      "price": 348,
+      "total_price": 348,
+      "shippingType": "Regular",
+      "address": "Isfahan"
+    },
+    {
+      "userId": 1735885491483,
+      "status": "indelivery",
+      "name": "New Balance 1080v11",
+      "productId": 30,
+      "count": 1,
+      "color": "red",
+      "size": 20,
+      "images": [
+        "http://localhost:8000/products/newbalance/6.webp",
+        "http://localhost:8000/products/newbalance/6.webp",
+        "http://localhost:8000/products/newbalance/6.webp"
+      ],
+      "price": 131.20000000000002,
+      "total_price": 131.20000000000002,
+      "shippingType": "Regular",
+      "address": "Isfahan"
+    },
+    {
+      "userId": 1735885491483,
+      "status": "indelivery",
+      "name": "New Balance 327",
+      "productId": 28,
+      "count": 1,
+      "color": "red",
+      "size": 20,
+      "images": [
+        "http://localhost:8000/products/newbalance/4.webp",
+        "http://localhost:8000/products/newbalance/4.webp",
+        "http://localhost:8000/products/newbalance/4.webp"
+      ],
+      "price": 168,
+      "total_price": 168,
+      "shippingType": "Regular",
+      "address": "Isfahan"
+    },
+    {
+      "userId": 1735885491483,
+      "status": "completed",
+      "name": "Asics GT-2000",
+      "productId": 14,
+      "count": 1,
+      "color": "red",
+      "size": 20,
+      "images": [
+        "http://localhost:8000/products/asics/6.webp",
+        "http://localhost:8000/products/asics/6.webp",
+        "http://localhost:8000/products/asics/6.webp"
+      ],
+      "price": 80,
+      "total_price": 80,
+      "shippingType": "Regular",
+      "address": "Isfahan"
+    },
+    {
+      "userId": 1735885505332,
+      "status": "indelivery",
+      "name": "Adidas Yeezy Boost",
+      "productId": 4,
+      "count": 5,
+      "color": "red",
+      "size": 40,
+      "images": [
+        "http://localhost:8000/products/adidas/4.webp",
+        "http://localhost:8000/products/adidas/4.1.webp",
+        "http://localhost:8000/products/adidas/4.2.webp"
+      ],
+      "price": 111.5,
+      "total_price": 557.5,
+      "shippingType": "Regular",
+      "address": "Isfahan"
+    },
+    {
+      "userId": 1735885505332,
+      "status": "indelivery",
+      "name": "Adidas PureBoost",
+      "productId": 8,
+      "count": 1,
+      "color": "red",
+      "size": 20,
+      "images": [
+        "http://localhost:8000/products/adidas/8.webp",
+        "http://localhost:8000/products/adidas/8.1.webp",
+        "http://localhost:8000/products/adidas/8.2.webp"
+      ],
+      "price": 49,
+      "total_price": 49,
+      "shippingType": "Regular",
+      "address": "Isfahan"
+    },
+    {
+      "userId": 1735885505332,
+      "status": "indelivery",
+      "name": "Puma Ignite Flash",
+      "productId": 48,
+      "count": 1,
+      "color": "red",
+      "size": 20,
+      "images": [
+        "http://localhost:8000/products/puma/8.webp",
+        "http://localhost:8000/products/puma/8.webp",
+        "http://localhost:8000/products/puma/8.webp"
+      ],
+      "price": 217.5,
+      "total_price": 217.5,
+      "shippingType": "Regular",
+      "address": "Isfahan"
+    }
+  ]
 }
